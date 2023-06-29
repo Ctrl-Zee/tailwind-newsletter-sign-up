@@ -42,10 +42,24 @@
               showError('emailAddress')
           }"
           class="[ng-invalid:border-red] w-full p-4 mt-1 border rounded-lg border-grey focus:outline-none focus:border-dark-slate-grey focus:ring-1 focus:ring-dark-slate-grey" />
-        <button class="w-full btn-slate-grey">
+        <button
+          class="w-full btn-slate-grey"
+          type="submit"
+          (click)="subscribe()">
           Subscribe to monthly newsletter
         </button>
       </form>
     </div>
   </div>
 </div>
+
+<p-dialog header="Header" [(visible)]="dialogVisible" [showHeader]="false">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</p-dialog>

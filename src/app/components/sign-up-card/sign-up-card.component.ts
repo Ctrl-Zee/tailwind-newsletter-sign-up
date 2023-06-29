@@ -6,16 +6,18 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-sign-up-card',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, DialogModule],
   templateUrl: './sign-up-card.component.html',
   styleUrls: ['./sign-up-card.component.scss'],
 })
 export class SignUpCardComponent {
   submissionForm!: FormGroup;
+  dialogVisible = false;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -31,5 +33,9 @@ export class SignUpCardComponent {
       (this.submissionForm.controls['emailAddress'].touched ||
         this.submissionForm.controls['emailAddress'].dirty);
     return hasError ?? false;
+  }
+
+  subscribe(): void {
+    this.dialogVisible = true;
   }
 }
