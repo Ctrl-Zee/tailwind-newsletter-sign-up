@@ -1,3 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.btn-slate-grey {
+  @apply p-3 mt-4 text-white border rounded-lg bg-dark-slate-grey sm:hover:bg-gradient-to-r from-pink to-orange;
+}

@@ -1,1 +1,51 @@
-<p>sign-up-card works!</p>
+<div class="w-full h-full bg-grey sm:flex sm:justify-center sm:items-center">
+  <div
+    class="w-full h-full bg-white sm:w-3/4 sm:h-3/4 sm:flex sm:flex-row-reverse sm:rounded-xl sm:bg-white sm:p-4">
+    <img
+      class="sm:hidden"
+      src="./assets/images/illustration-sign-up-mobile.svg"
+      alt="" />
+    <img
+      class="hidden object-fill sm:max-w-full sm:block sm:flex-1"
+      src="./assets/images/illustration-sign-up-desktop.svg"
+      alt="" />
+    <div class="p-4 sm:flex-1">
+      <h1 class="mb-4 text-4xl font-bold">Stay updated!</h1>
+      <p class="mb-4">
+        Join 60,0000+ product managers reveiving monthly updates on:
+      </p>
+      <ul class="list-disc marker:text-tomato list ml-7">
+        <li class="mb-2">Product discovery and building what matters</li>
+        <li class="mb-2">Measuring to ensure updates are a success</li>
+        <li class="mb-2">And much more!</li>
+      </ul>
+
+      <form [formGroup]="submissionForm" class="mt-8">
+        <div class="flex justify-between">
+          <label class="block">
+            <span class="block text-sm font-medium text-slate-700"
+              >Email Address</span
+            >
+          </label>
+          <label *ngIf="showError('emailAddress')" class="block">
+            <span class="block text-sm font-medium text-tomato"
+              >Valid email required</span
+            >
+          </label>
+        </div>
+        <input
+          formControlName="emailAddress"
+          placeholder="email@company.com"
+          type="text"
+          [ngClass]="{
+            'border-tomato outline-none focus:ring-1 focus:ring-tomato bg-lime-100':
+              showError('emailAddress')
+          }"
+          class="[ng-invalid:border-red] w-full p-4 mt-1 border rounded-lg border-grey focus:outline-none focus:border-dark-slate-grey focus:ring-1 focus:ring-dark-slate-grey" />
+        <button class="w-full btn-slate-grey">
+          Subscribe to monthly newsletter
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
