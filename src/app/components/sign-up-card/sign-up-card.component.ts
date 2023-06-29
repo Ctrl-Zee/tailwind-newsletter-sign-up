@@ -23,19 +23,24 @@ export class SignUpCardComponent {
 
   ngOnInit(): void {
     this.submissionForm = this.formBuilder.group({
-      emailAddress: ['', [Validators.required]],
+      emailAddress: ['', [Validators.email, Validators.required]],
     });
   }
 
   showError(control: string): boolean {
     const hasError =
-      this.submissionForm.controls['emailAddress'].errors &&
-      (this.submissionForm.controls['emailAddress'].touched ||
-        this.submissionForm.controls['emailAddress'].dirty);
+      this.submissionForm.controls[control].errors &&
+      (this.submissionForm.controls[control].touched ||
+        this.submissionForm.controls[control].dirty);
     return hasError ?? false;
   }
 
   subscribe(): void {
     this.dialogVisible = true;
+  }
+
+  closeDialog(): void {
+    this.submissionForm.reset();
+    this.dialogVisible = false;
   }
 }

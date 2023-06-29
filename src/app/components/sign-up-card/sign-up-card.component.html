@@ -6,7 +6,7 @@
       src="./assets/images/illustration-sign-up-mobile.svg"
       alt="" />
     <img
-      class="hidden object-fill sm:max-w-full sm:block sm:flex-1"
+      class="hidden object-cover sm:w-full sm:h-full sm:block sm:flex-1"
       src="./assets/images/illustration-sign-up-desktop.svg"
       alt="" />
     <div class="p-4 sm:flex-1">
@@ -38,14 +38,15 @@
           placeholder="email@company.com"
           type="text"
           [ngClass]="{
-            'border-tomato outline-none focus:ring-1 focus:ring-tomato bg-lime-100':
+            'border-tomato outline-none focus:ring-1 focus:ring-tomato bg-light-orange':
               showError('emailAddress')
           }"
           class="[ng-invalid:border-red] w-full p-4 mt-1 border rounded-lg border-grey focus:outline-none focus:border-dark-slate-grey focus:ring-1 focus:ring-dark-slate-grey" />
         <button
           class="w-full btn-slate-grey"
           type="submit"
-          (click)="subscribe()">
+          (click)="subscribe()"
+          [disabled]="!submissionForm.valid">
           Subscribe to monthly newsletter
         </button>
       </form>
@@ -53,13 +54,23 @@
   </div>
 </div>
 
-<p-dialog header="Header" [(visible)]="dialogVisible" [showHeader]="false">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+<p-dialog
+  header="Header"
+  [(visible)]="dialogVisible"
+  [showHeader]="false"
+  styleClass="dialog">
+  <div class="flex flex-col justify-between h-full">
+    <div>
+      <img class="mb-4" src="assets/images/icon-success.svg" alt="" />
+      <h1 class="mb-4 text-4xl font-bold">Thanks for subscribing!</h1>
+      <p class="mb-4">
+        A confirmation email has been sent to
+        {{ submissionForm.controls['emailAddress'].value }}. Please open it and
+        click the button inside to confirm your subscription.
+      </p>
+    </div>
+    <button class="w-full btn-slate-grey" type="submit" (click)="closeDialog()">
+      Dismiss message
+    </button>
+  </div>
 </p-dialog>

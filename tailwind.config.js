@@ -13,6 +13,7 @@ module.exports = {
         grey: 'hsl(231, 7%, 60%)',
         pink: 'hsl(346, 100%, 66%)',
         orange: 'hsl(13, 90%, 60%)',
+        'light-orange': 'hsl(5, 100%, 95%)',
       },
     },
     fontFamily: {
