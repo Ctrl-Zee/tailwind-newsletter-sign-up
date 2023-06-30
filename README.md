@@ -1,6 +1,6 @@
 # TailwindNewsletterSignUp
 
-This project is a simple newsletter sign-up form built with Angular and styled with Tailwind CSS. This project was a [challenge](<[Title](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv)>) from Frontend Mentor and created to get familiar with Tailwind CSS.
+This project is a simple newsletter sign-up form built with Angular and styled with Tailwind CSS. This project was a [challenge](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv) from Frontend Mentor and created to get familiar with Tailwind CSS.
 
 ## Development server
 
