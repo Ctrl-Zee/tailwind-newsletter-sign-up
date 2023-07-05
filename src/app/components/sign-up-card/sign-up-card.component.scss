@@ -1,7 +1,1 @@
-:host ::ng-deep p-dialog .dialog.p-dialog {
-  @apply w-4/5 h-full sm:w-2/5 sm:rounded-3xl;
-}
-
-:host ::ng-deep p-dialog .dialog .p-dialog-content {
-  @apply p-16 rounded-3xl shadow-lg;
-}
+@use '../../../assets/styles/dialog' as *;
